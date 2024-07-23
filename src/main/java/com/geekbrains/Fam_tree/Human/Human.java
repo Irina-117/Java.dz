@@ -1,19 +1,20 @@
-package com.geekbrains.OOP.dz;
+package com.geekbrains.Fam_tree.Human;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Human {
+public class Human implements Serializable {
     private long id;
     private String name;
     private Gender gender;
     private LocalDate birthDate, deathDate;
     private Human mother;
     private Human father;
-    List<Human> children;
+    private List<Human> children;
     private Human spouse;
 
     public Human(String name, Gender gender, LocalDate birthDate, LocalDate deathDate, Human mother, Human father) {
@@ -24,7 +25,7 @@ public class Human {
         this.deathDate = deathDate;
         this.mother = mother;
         this.father = father;
-        children = new ArrayList<Human>();
+        this.children = new ArrayList<Human>();
 
     }
 
@@ -87,7 +88,6 @@ public class Human {
             setMother(parent);
         }else if(parent.getGender().equals(Gender.Male)){
             setFather(parent);
-
         }
         return true;
     }

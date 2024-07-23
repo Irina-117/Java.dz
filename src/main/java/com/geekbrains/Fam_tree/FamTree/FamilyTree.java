@@ -1,9 +1,12 @@
-package com.geekbrains.OOP.dz;
+package com.geekbrains.Fam_tree.FamTree;
 
+import com.geekbrains.Fam_tree.Human.Human;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FamilyTree {
+public class FamilyTree implements Serializable {
     private List<Human>familyTree;
     private long humansId;
 
