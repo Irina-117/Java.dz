@@ -18,10 +18,12 @@ public class Main {
 //        save(famTree);
         System.out.println("-----------------");
         famTree.sortByName();
-        System.out.println(famTree);
+        System.out.println("Объекты отсартированы по имени \n"+famTree);
         System.out.println("-----------------");
         famTree.sortByAge();
-        System.out.println(famTree);
+        System.out.println("Объекты отсартированы по возрасту и выведены циклом foreach \n" + famTree.getInfoByHuman());
+
+
 
     }
     private static FamilyTree read (){

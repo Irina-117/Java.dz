@@ -6,20 +6,21 @@ import com.geekbrains.Fam_tree.Human.HumanComporatorByAge;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree implements Serializable {
+public class FamilyTree implements Serializable,Iterable<Human> {
     private List<Human>familyTree;
-    private long humansId;
 
+    private long humansId;
     public FamilyTree() {
         this.familyTree = new ArrayList<>();
     }
+
     public void add(Human human) {
         this.familyTree.add(human);
         human.setId(humansId++);
     }
-
     public List<Human> findByName(String name){
         List<Human> humans = new ArrayList<>();
         for(Human human:familyTree){
@@ -29,6 +30,7 @@ public class FamilyTree implements Serializable {
         }
         return humans;
     }
+
     public boolean SetWedding(Human human1,Human human2){
         if (human1.getSpouse()==null &&  human2.getSpouse()==null){
             human1.setSpouse(human2);
@@ -37,7 +39,6 @@ public class FamilyTree implements Serializable {
         }
         return false;
     }
-
     public boolean SetDivorce(Human human1, Human human2){
         if (human1.getSpouse()!=null &&  human2.getSpouse()!=null){
             human1.setSpouse(null);
@@ -47,6 +48,7 @@ public class FamilyTree implements Serializable {
         return false;
 
     }
+
     public Human findById(long id){
         for (Human human:familyTree){
             if (human.getId()==id){
@@ -55,7 +57,6 @@ public class FamilyTree implements Serializable {
         }
         return null;
     }
-
     @Override
     public String toString() {
         return getInfo();
@@ -70,12 +71,30 @@ public class FamilyTree implements Serializable {
         }
         return str.toString();
     }
+//Добавила вывод через цикл Foreach
+
+    public String getInfoByHuman(){
+        StringBuilder str = new StringBuilder();
+        str.append("Список обектов семейного дерева:");
+        str.append("\n");
+        for(Human human1:familyTree){
+            str.append(human1);
+            str.append("\n");
+        }
+        return str.toString();
+    }
+
+    @Override
+    public Iterator<Human> iterator() {
+        return new HumanIterator(familyTree);
+    }
+
     public void sortByName(){
         Collections.sort(familyTree);
 
     }
+
     public void sortByAge(){
         Collections.sort(familyTree, new HumanComporatorByAge());
     }
-
 }
