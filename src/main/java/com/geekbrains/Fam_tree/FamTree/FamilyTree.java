@@ -1,9 +1,11 @@
 package com.geekbrains.Fam_tree.FamTree;
 
 import com.geekbrains.Fam_tree.Human.Human;
+import com.geekbrains.Fam_tree.Human.HumanComporatorByAge;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class FamilyTree implements Serializable {
@@ -68,6 +70,12 @@ public class FamilyTree implements Serializable {
         }
         return str.toString();
     }
+    public void sortByName(){
+        Collections.sort(familyTree);
 
+    }
+    public void sortByAge(){
+        Collections.sort(familyTree, new HumanComporatorByAge());
+    }
 
 }

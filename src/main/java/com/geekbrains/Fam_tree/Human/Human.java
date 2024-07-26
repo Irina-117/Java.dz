@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Human implements Serializable {
+public class Human implements Serializable,Comparable<Human> {
     private long id;
+
     private String name;
     private Gender gender;
     private LocalDate birthDate, deathDate;
@@ -16,7 +17,6 @@ public class Human implements Serializable {
     private Human father;
     private List<Human> children;
     private Human spouse;
-
     public Human(String name, Gender gender, LocalDate birthDate, LocalDate deathDate, Human mother, Human father) {
         this.id =-1;
         this.name = name;
@@ -32,10 +32,10 @@ public class Human implements Serializable {
     public Human(String name, Gender gender, LocalDate birthDate){
         this(name ,gender, birthDate, null, null, null);
 }
+
     public Human(String name, Gender gender, LocalDate birthDate, Human mother, Human father){
         this(name ,gender, birthDate, null, mother, father);
     }
-
     public long getId() {
         return id;
     }
@@ -83,6 +83,7 @@ public class Human implements Serializable {
         }
         return false;
     }
+
     public boolean addParent(Human parent){
         if (parent.getGender().equals(Gender.Female)) {
             setMother(parent);
@@ -91,7 +92,6 @@ public class Human implements Serializable {
         }
         return true;
     }
-
     public List<Human> getParents(){
         List<Human> parents = new ArrayList<>();
         if (father!=null){
@@ -153,6 +153,7 @@ public class Human implements Serializable {
     public String toString() {
         return getInfo();
     }
+
     public String getInfo() {
         StringBuilder info = new StringBuilder();
         info. append("id: " + id + "\n");
@@ -165,7 +166,6 @@ public class Human implements Serializable {
         info.append ("Супруг/супруга: " + getInfoSpouse() + "\n");
         return info.toString();
     }
-
     private String getInfoMother() {
         if (this.mother != null){
             return this.mother.getName();
@@ -179,6 +179,7 @@ public class Human implements Serializable {
         }
         return "неизвестен";
     }
+
     private String getInfoChildren() {
         StringBuilder res = new StringBuilder();
         res.append(" ");
@@ -199,7 +200,6 @@ public class Human implements Serializable {
         }
         return "отсутствует";
     }
-
     @Override
     public boolean equals(Object obj) {
         if (this ==obj){
@@ -210,6 +210,11 @@ public class Human implements Serializable {
         }
         Human human = (Human) obj;
         return Objects.equals(name, human.name) && gender==human.gender && Objects.equals(birthDate,human.birthDate) && Objects.equals(deathDate,human.deathDate) && Objects.equals(spouse,human.spouse)&& Objects.equals(children,human.children) && Objects.equals(mother,human.mother) && Objects.equals(father,human.father);
+    }
+
+    @Override
+    public int compareTo(Human o) {
+        return name.compareTo(o.name);
     }
 }
 

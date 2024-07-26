@@ -12,10 +12,16 @@ import java.time.LocalDate;
 public class Main {
     final static String path = "src/main/java/com/geekbrains/Fam_tree/Writer/file.txt";
     public static void main(String[] args) {
-        FamilyTree famTree = read();
-//        FamilyTree famTree = getFamilyTree();
+//        FamilyTree famTree = read();
+        FamilyTree famTree = getFamilyTree();
         System.out.println(famTree);
 //        save(famTree);
+        System.out.println("-----------------");
+        famTree.sortByName();
+        System.out.println(famTree);
+        System.out.println("-----------------");
+        famTree.sortByAge();
+        System.out.println(famTree);
 
     }
     private static FamilyTree read (){
@@ -88,4 +94,6 @@ public class Main {
         famTree.SetDivorce(dima,sasha);
         return famTree;
     }
+
+
 }
