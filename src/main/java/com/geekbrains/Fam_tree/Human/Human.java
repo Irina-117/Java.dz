@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Human implements Serializable,Comparable<Human>, FamilyTreeItem<Human> {
+public class Human implements Serializable, FamilyTreeItem<Human> {
     private long id;
 
     private String name;
