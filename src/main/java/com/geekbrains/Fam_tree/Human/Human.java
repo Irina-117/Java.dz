@@ -1,6 +1,6 @@
 package com.geekbrains.Fam_tree.Human;
 
-import com.geekbrains.Fam_tree.FamilyTreeItem;
+import com.geekbrains.Fam_tree.FamTree.FamilyTreeItem;
 
 import java.io.Serializable;
 import java.time.LocalDate;

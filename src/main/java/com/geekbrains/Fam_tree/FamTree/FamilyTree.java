@@ -1,7 +1,5 @@
 package com.geekbrains.Fam_tree.FamTree;
 
-import com.geekbrains.Fam_tree.FamilyTreeItem;
-import com.geekbrains.Fam_tree.Human.Human;
 import com.geekbrains.Fam_tree.Human.HumanComporatorByAge;
 
 import java.io.Serializable;
