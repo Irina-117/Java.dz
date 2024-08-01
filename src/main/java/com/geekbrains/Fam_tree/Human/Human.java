@@ -1,5 +1,7 @@
 package com.geekbrains.Fam_tree.Human;
 
+import com.geekbrains.Fam_tree.FamilyTreeItem;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Human implements Serializable,Comparable<Human> {
+public class Human implements Serializable,Comparable<Human>, FamilyTreeItem<Human> {
     private long id;
 
     private String name;
