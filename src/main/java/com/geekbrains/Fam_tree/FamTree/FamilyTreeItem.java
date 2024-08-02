@@ -7,6 +7,8 @@ public interface FamilyTreeItem<E> extends Comparable<E>{
     E getSpouse();
     void setSpouse(E item);
     long getId();
+    boolean addParent(E parent);
+    boolean addChild(E child);
 
 
 

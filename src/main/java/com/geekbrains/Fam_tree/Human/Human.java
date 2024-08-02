@@ -31,13 +31,19 @@ public class Human implements Serializable, FamilyTreeItem<Human> {
 
     }
 
-    public Human(String name, Gender gender, LocalDate birthDate){
-        this(name ,gender, birthDate, null, null, null);
-}
+//    public Human(String name, Gender gender, LocalDate birthDate){
+//        this(name ,gender, birthDate, null, null, null);
+//}
+//
+//    public Human(String name, Gender gender, LocalDate birthDate, Human mother, Human father){
+//        this(name ,gender, birthDate, null, mother, father);
+//    }
 
-    public Human(String name, Gender gender, LocalDate birthDate, Human mother, Human father){
-        this(name ,gender, birthDate, null, mother, father);
+    public Human() {
+
     }
+
+
     public long getId() {
         return id;
     }

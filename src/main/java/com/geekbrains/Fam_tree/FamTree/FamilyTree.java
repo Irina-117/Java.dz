@@ -20,14 +20,14 @@ public class FamilyTree<E extends FamilyTreeItem<E>> implements Serializable,Ite
         this.familyTree.add(human);
         human.setId(humansId++);
     }
-    public List<E> findByName(String name){
-        List<E> humans = new ArrayList<>();
+    public E findByName(String name){
+
         for(E human:familyTree){
             if (human.getName().equals(name)){
-                humans.add(human);
+                return human;
             }
         }
-        return humans;
+        return null;
     }
 
     public boolean SetWedding(E human1,E human2){
@@ -90,4 +90,5 @@ public class FamilyTree<E extends FamilyTreeItem<E>> implements Serializable,Ite
     public void sortByName(){Collections.sort(familyTree);}
 
     public void sortByAge(){Collections.sort(familyTree, new HumanComporatorByAge<>());}
+
 }
