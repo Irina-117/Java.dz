@@ -1,6 +1,6 @@
-package com.geekbrains.Fam_tree.FamTree;
+package com.geekbrains.Fam_tree.model.FamTree;
 
-import com.geekbrains.Fam_tree.Human.HumanComporatorByAge;
+import com.geekbrains.Fam_tree.model.Human.HumanComporatorByAge;
 
 import java.io.Serializable;
 import java.util.ArrayList;

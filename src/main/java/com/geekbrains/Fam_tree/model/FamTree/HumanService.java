@@ -1,8 +1,7 @@
-package com.geekbrains.Fam_tree.FamTree;
+package com.geekbrains.Fam_tree.model.FamTree;
 
-import com.geekbrains.Fam_tree.Human.Gender;
-import com.geekbrains.Fam_tree.Human.HumanBuilder;
-import com.geekbrains.Fam_tree.Human.Human;
+import com.geekbrains.Fam_tree.model.Human.Gender;
+import com.geekbrains.Fam_tree.model.Human.HumanBuilder;
 
 import java.time.LocalDate;
 
@@ -32,8 +31,6 @@ public class HumanService<E extends FamilyTreeItem<E>> {
     public boolean addParent(String nameHuman,String nameParent){
         return familyTree.findByName(nameHuman).addParent(familyTree.findByName(nameParent));
     }
-
-
     public void sortByName(){
         familyTree.sortByName();
     }
@@ -44,6 +41,5 @@ public class HumanService<E extends FamilyTreeItem<E>> {
         return familyTree.getInfo();
     }
 
-// добавить методы
 
 }

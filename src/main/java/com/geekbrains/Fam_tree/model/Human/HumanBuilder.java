@@ -1,6 +1,6 @@
-package com.geekbrains.Fam_tree.Human;
+package com.geekbrains.Fam_tree.model.Human;
 
-import com.geekbrains.Fam_tree.FamTree.FamilyTreeItem;
+import com.geekbrains.Fam_tree.model.FamTree.FamilyTreeItem;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

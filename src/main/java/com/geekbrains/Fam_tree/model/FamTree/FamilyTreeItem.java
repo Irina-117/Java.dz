@@ -1,4 +1,4 @@
-package com.geekbrains.Fam_tree.FamTree;
+package com.geekbrains.Fam_tree.model.FamTree;
 
 public interface FamilyTreeItem<E> extends Comparable<E>{
     int getAge();

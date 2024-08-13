@@ -1,9 +1,9 @@
-package com.geekbrains.Fam_tree.Writer;
+package com.geekbrains.Fam_tree.model.Writer;
 
 
 import java.io.*;
 
-public class FileHandler implements Writer{
+public class FileHandler implements Writer {
 private String path;
 
 public FileHandler(String path) {

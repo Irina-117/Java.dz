@@ -1,4 +1,4 @@
-package com.geekbrains.Fam_tree.Writer;
+package com.geekbrains.Fam_tree.model.Writer;
 
 import java.io.Serializable;
 
