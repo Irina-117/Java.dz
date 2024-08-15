@@ -8,9 +8,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class ConsoleUI implements View {
-    Scanner scanner;
-    Presenter presenter;
-    boolean flag;
+    private Scanner scanner;
+    private Presenter presenter;
+    private boolean flag;
     private MainMenu menu;
 
     public ConsoleUI() {
