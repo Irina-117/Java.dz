@@ -148,4 +148,27 @@ public class ConsoleUI implements View {
     public void printAnswer(String answer) {
         System.out.println(answer);
     }
+    public void saveToFile() {
+        String filename;
+        String filePath = "src/main/java/com/geekbrains/Fam_tree/model/writer";
+        printAnswer("Укажите имя файла");
+        filename = scanner.nextLine();
+        filePath += filename + ".txt";
+        if (presenter.saveToFile(filePath))
+            printAnswer("Файл " + filename + " успешно сохранен");
+        else
+            printAnswer("Ошибка сохранения");
+    }
+
+    public void loadFromFile() {
+        String filename;
+        String filePath = "src/main/java/com/geekbrains/Fam_tree/model/writer";
+        printAnswer("Укажите имя файла");
+        filename = scanner.nextLine();
+        filePath += filename + ".txt";
+        if (presenter.loadFromFile(filePath))
+            printAnswer("Файл " + filename + " успешно загружен");
+        else
+            printAnswer("Ошибка загрузки");
+    }
 }

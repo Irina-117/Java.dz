@@ -1,15 +1,7 @@
 package com.geekbrains.Fam_tree;
 
-import com.geekbrains.Fam_tree.model.FamTree.FamilyTree;
-import com.geekbrains.Fam_tree.model.FamTree.HumanService;
-import com.geekbrains.Fam_tree.model.Human.Gender;
-import com.geekbrains.Fam_tree.model.Human.Human;
-import com.geekbrains.Fam_tree.model.Writer.FileHandler;
 import com.geekbrains.Fam_tree.view.ConsoleUI;
 import com.geekbrains.Fam_tree.view.View;
-
-import java.time.LocalDate;
-
 
 
 public class Main {

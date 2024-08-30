@@ -1,4 +1,4 @@
-package com.geekbrains.Fam_tree.model.Writer;
+package com.geekbrains.Fam_tree.model.writer;
 
 
 import java.io.*;
@@ -6,9 +6,6 @@ import java.io.*;
 public class FileHandler implements Writer {
 private String path;
 
-public FileHandler(String path) {
-    this.path=path;
-}
 
 
     @Override
@@ -34,5 +31,10 @@ public FileHandler(String path) {
         e.printStackTrace();
         return null;
     }
+    }
+
+    @Override
+    public void setPath(String filePath) {
+        this.path =filePath;
     }
 }

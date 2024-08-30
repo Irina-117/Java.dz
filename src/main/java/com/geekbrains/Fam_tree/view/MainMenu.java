@@ -18,6 +18,8 @@ public class MainMenu {
         commands.add(new SortByNameCommand(consoleUI));
         commands.add(new SortByAgeCommand(consoleUI));
         commands.add(new GetInfoCommand(consoleUI));
+        commands.add(new SaveTofile(consoleUI));
+        commands.add(new LoadToFile(consoleUI));
         commands.add(new FinishCommand(consoleUI));
     }
     public String menu(){

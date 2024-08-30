@@ -72,6 +72,7 @@ public class FamilyTree<E extends FamilyTreeItem<E>> implements Serializable,Ite
     }
 //Добавила вывод через цикл Foreach
 
+
     public String getInfoByHuman(){
         StringBuilder str = new StringBuilder();
         str.append("Список обектов семейного дерева:");

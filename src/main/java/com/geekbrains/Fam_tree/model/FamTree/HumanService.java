@@ -1,21 +1,22 @@
 package com.geekbrains.Fam_tree.model.FamTree;
 
 import com.geekbrains.Fam_tree.model.Human.Gender;
+import com.geekbrains.Fam_tree.model.Human.Human;
 import com.geekbrains.Fam_tree.model.Human.HumanBuilder;
 
 import java.time.LocalDate;
 
 
-public class HumanService<E extends FamilyTreeItem<E>> {
-    private FamilyTree<E> familyTree;
-    private HumanBuilder<E> humanBuilder;
+public class HumanService {
+    private FamilyTree familyTree;
+    private HumanBuilder humanBuilder;
 
     public HumanService() {
         familyTree = new FamilyTree<>();
-        humanBuilder=new HumanBuilder<>();
+        humanBuilder=new HumanBuilder();
     }
     public void addHuman(String name, Gender gender, LocalDate birthDate){
-        E human =  humanBuilder.setName(name).setGender(gender).setBirthDate(birthDate).build();
+        Human human =  humanBuilder.setName(name).setGender(gender).setBirthDate(birthDate).build();
         familyTree.add(human);
     }
     public boolean setWedding(String name1,String name2){
@@ -40,6 +41,11 @@ public class HumanService<E extends FamilyTreeItem<E>> {
     public String getInfo(){
         return familyTree.getInfo();
     }
+    public FamilyTree<Human> getFamilyTree() {
+        return familyTree;
+    }
 
-
+    public void setFamilyTree(FamilyTree familyTree) {
+        this.familyTree = familyTree;
+    }
 }
